@@ -1,0 +1,12 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [    
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-vars": 0
+  },
+  "plugins": ["react", "@typescript-eslint", "testing-library", "prettier"]
+}
