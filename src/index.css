@@ -1,3 +1,13 @@
+@import "./components/header/header.scss";
+@import "./components/side-navigation/side-nabar.scss";
+
+@import url("https://web.static.nowtv.com/web-toolkit/1.6.0/fonts.css");
+
 body {
   margin: 0;
+}
+
+* {
+  font-weight: lighter !important;
+  font-family: nowtv, Helvetica, Arial, sans-serif !important;
 }
