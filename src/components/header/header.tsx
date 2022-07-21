@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Navbar } from "react-bootstrap";
 
 import nowLogo from "../header/Now_Logo.png";
+import SignedIn from "./signed-in";
 
 const Header: React.FC = () => {
   return (
@@ -16,7 +17,10 @@ const Header: React.FC = () => {
           />
           XTV Release Dashboard
         </Navbar.Brand>
-        <Button variant="primary">Sign in</Button>
+        <div className="login-info">
+          <SignedIn />
+          <Button variant="primary">Sign out</Button>
+        </div>
       </Container>
     </Navbar>
   );
