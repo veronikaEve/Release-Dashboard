@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Container, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
-import nowLogo from "../header/Now_Logo.png";
+import nowLogo from "./Now_Logo.png";
 import SignedIn from "./signed-in";
 
 const Header: React.FC = () => {
