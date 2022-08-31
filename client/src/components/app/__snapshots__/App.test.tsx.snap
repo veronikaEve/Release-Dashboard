@@ -59,6 +59,42 @@ exports[`renders correctly 1`] = `
       </div>
     </nav>
     <div
+      class="secondary-header container-fluid"
+    >
+      <p
+        class="no-p-margin"
+      >
+        Current Live XTV App version is: 
+        <b
+          data-testid="app-version-number"
+        >
+          7.8.8
+        </b>
+         rolled out to 100% of users
+      </p>
+      <button
+        class="btn btn-primary btn-sm"
+        data-testid="view-info"
+        type="button"
+      >
+        View Info
+      </button>
+      <button
+        class="btn btn-primary btn-sm"
+        data-testid="roll-back"
+        type="button"
+      >
+        Roll Back
+      </button>
+      <button
+        class="btn btn-primary btn-sm"
+        data-testid="new-release"
+        type="button"
+      >
+        Start New Release
+      </button>
+    </div>
+    <div
       class="flex-column side-navbar bg-light nav nav-pills"
       data-testid="side-navbar"
     >
