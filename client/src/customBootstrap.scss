@@ -1,0 +1,8 @@
+/* my colours */
+$newPrimary: teal;
+
+/* make the customizations of bootstrap */
+$primary: $newPrimary;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
