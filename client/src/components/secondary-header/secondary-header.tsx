@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const SecondaryHeader: React.FC = () => {
   return (
@@ -16,7 +18,9 @@ const SecondaryHeader: React.FC = () => {
         Roll Back
       </Button>
       <Button size="sm" data-testid="new-release">
-        Start New Release
+        <Nav.Link as={NavLink} to="new-release">
+          Start New Release
+        </Nav.Link>
       </Button>
     </Container>
   );
