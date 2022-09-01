@@ -35,7 +35,12 @@ exports[`SecondaryHeader should match snapshot 1`] = `
       data-testid="new-release"
       type="button"
     >
-      Start New Release
+      <a
+        class="nav-link"
+        href="/new-release"
+      >
+        Start New Release
+      </a>
     </button>
   </div>
 </DocumentFragment>
