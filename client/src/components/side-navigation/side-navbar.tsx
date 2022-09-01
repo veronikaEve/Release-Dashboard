@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const SideNav: React.FC = () => {
   return (
     <Nav
-      className="flex-column side-navbar bg-light"
+      className="flex-column side-navbar bg-white"
       defaultActiveKey="home"
       variant="pills"
       data-testid="side-navbar"

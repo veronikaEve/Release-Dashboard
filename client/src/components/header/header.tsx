@@ -7,7 +7,7 @@ import SignedIn from "./signed-in";
 
 const Header: React.FC = () => {
   return (
-    <Navbar sticky="top" bg="light" className="top-navbar" data-testid="header">
+    <Navbar sticky="top" bg="white" className="top-navbar" data-testid="header">
       <Container fluid>
         <Navbar.Brand as={NavLink} to="home" data-testid="navbar-brand">
           <img
