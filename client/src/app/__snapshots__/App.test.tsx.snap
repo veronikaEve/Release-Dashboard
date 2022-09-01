@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
     class="App"
   >
     <nav
-      class="top-navbar navbar navbar-expand navbar-light bg-light sticky-top"
+      class="top-navbar navbar navbar-expand navbar-light bg-white sticky-top"
       data-testid="header"
     >
       <div
@@ -91,11 +91,16 @@ exports[`renders correctly 1`] = `
         data-testid="new-release"
         type="button"
       >
-        Start New Release
+        <a
+          class="nav-link"
+          href="/new-release"
+        >
+          Start New Release
+        </a>
       </button>
     </div>
     <div
-      class="flex-column side-navbar bg-light nav nav-pills"
+      class="flex-column side-navbar bg-white nav nav-pills"
       data-testid="side-navbar"
     >
       <a
@@ -120,6 +125,9 @@ exports[`renders correctly 1`] = `
         About
       </a>
     </div>
+    <div
+      class="page container-fluid"
+    />
   </div>
 </DocumentFragment>
 `;

@@ -1,0 +1,24 @@
+@use "../../variables.scss";
+
+.table-wrapper {
+    box-shadow: variables.$boxShadow;
+}
+
+.table-wrapper__scroll {
+    height: 300px;
+    overflow: scroll;
+}
+
+.version-table {
+    background-color: white;
+    border-color: $gray-400;
+    margin-bottom: 0;
+}
+
+.version-table__header {
+    background-color: $gray-200;
+
+    & th {
+        font-weight: bolder !important;
+    }
+}
