@@ -6,6 +6,7 @@ import SideNav from "../components/side-navigation/side-navbar";
 import SecondaryHeader from "../components/secondary-header/secondary-header";
 
 import HomePage from "../pages/home/home-page";
+import NewReleasePage from "../pages/new-release-page.tsx/new-release-page";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Container fluid className="page">
           <Routes>
             <Route path="/home" element={<HomePage />} />
-            <Route path="/new-release" />
+            <Route path="/new-release" element={<NewReleasePage />} />
             <Route path="/about" />
           </Routes>
         </Container>
