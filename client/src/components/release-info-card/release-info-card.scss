@@ -1,0 +1,5 @@
+@use "../../variables.scss";
+
+.release-info-card {
+    box-shadow: variables.$boxShadow;
+}

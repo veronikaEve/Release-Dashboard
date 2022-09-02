@@ -2,8 +2,21 @@
 
 exports[`NewReleasePage should match snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    Hello
+  <div
+    class="col-md-4"
+  >
+    <div
+      class="release-info-card text-center card"
+    >
+      <div
+        class="card-header"
+      >
+        Release Info
+      </div>
+      <div
+        class="card-body"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
