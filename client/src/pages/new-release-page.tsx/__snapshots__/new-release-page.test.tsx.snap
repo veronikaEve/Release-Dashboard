@@ -15,7 +15,64 @@ exports[`NewReleasePage should match snapshot 1`] = `
       </div>
       <div
         class="card-body"
-      />
+      >
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col-md-4"
+          >
+            Name:
+          </div>
+          <div
+            class="info-group__info col-md-8"
+          >
+            Wazzaaaap
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col-md-4"
+          >
+            Name:
+          </div>
+          <div
+            class="info-group__info col-md-8"
+          >
+            Wazzaaaap
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col-md-4"
+          >
+            Name:
+          </div>
+          <div
+            class="info-group__info col-md-8"
+          >
+            Wazzaaaap
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col-md-4"
+          >
+            Name:
+          </div>
+          <div
+            class="info-group__info col-md-8"
+          >
+            Wazzaaaap
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
