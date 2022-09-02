@@ -5,7 +5,13 @@ const VersionTable: React.FC = () => {
   return (
     <div className="table-wrapper">
       <div className="table-wrapper__scroll">
-        <Table bordered hover size="sm" className="version-table">
+        <Table
+          bordered
+          hover
+          size="sm"
+          className="version-table"
+          data-testid="version-table"
+        >
           <thead className="version-table__header">
             <tr>
               <th>Date</th>
