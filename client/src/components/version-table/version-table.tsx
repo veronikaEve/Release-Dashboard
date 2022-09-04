@@ -1,7 +1,11 @@
-import React from "react";
 import { Table } from "react-bootstrap";
+import { VersionData } from "../../@types";
 
-const VersionTable: React.FC = () => {
+type PropTypes = {
+  versionData: VersionData[];
+};
+
+const VersionTable = ({ versionData }: PropTypes) => {
   return (
     <div className="table-wrapper">
       <div className="table-wrapper__scroll">
@@ -21,66 +25,15 @@ const VersionTable: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+            {versionData &&
+              versionData.map((version) => (
+                <tr>
+                  <td>{version.date}</td>
+                  <td>{version.versionFrom}</td>
+                  <td>{version.versionTo}</td>
+                  <td>{version.associatedUser}</td>
+                </tr>
+              ))}
           </tbody>
         </Table>
       </div>
