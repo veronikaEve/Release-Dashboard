@@ -11,6 +11,8 @@ app.use(express.json());
 
 const dbo = require("./database/connection");
 
+app.use('/releases', require('./routes/mongoDB'));
+
 app.listen(port, () => {
     // perform a database connection when server starts
     dbo.connectToServer(function (err) {
