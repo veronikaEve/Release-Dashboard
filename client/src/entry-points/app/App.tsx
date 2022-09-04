@@ -1,12 +1,12 @@
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "../components/header/header";
-import SideNav from "../components/side-navigation/side-navbar";
-import SecondaryHeader from "../components/secondary-header/secondary-header";
+import Header from "../../components/header/header";
+import SideNav from "../../components/side-navigation/side-navbar";
+import SecondaryHeader from "../../components/secondary-header/secondary-header";
 
-import HomePage from "../pages/home/home-page";
-import NewReleasePage from "../pages/new-release-page.tsx/new-release-page";
+import HomePage from "../../pages/home/home-page";
+import NewReleasePage from "../../pages/new-release-page/new-release-page";
 
 function App() {
   return (

@@ -1,0 +1,30 @@
+@import "./customBootstrap.scss";
+
+@import "../entry-points/app/App.scss";
+@import "../components/header/header.scss";
+@import "../components/side-navigation/side-navbar.scss";
+@import "../components/secondary-header/secondary-header.scss";
+@import "../components/version-table/version-table.scss";
+@import "../components/release-info-card/release-info-card.scss";
+@import "../components/info-group/info-group.scss";
+
+@import url("https://web.static.nowtv.com/web-toolkit/1.6.0/fonts.css");
+
+
+body {
+  margin: 0;
+  background-color: $gray-100;
+}
+
+* {
+  font-weight: lighter !important;
+  font-family: nowtv, Helvetica, Arial, sans-serif !important;
+}
+
+b {
+  font-weight: bolder !important;
+}
+
+p.no-p-margin {
+  margin: 0;
+}
