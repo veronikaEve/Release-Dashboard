@@ -1,7 +1,7 @@
 export type VersionData = {
-  id: string;
+  associatedUser: string;
   date: string;
   versionFrom: string;
   versionTo: string;
-  associatedUser: string;
+  _id: string;
 };

@@ -24,10 +24,10 @@ const VersionTable = ({ versionData }: PropTypes) => {
               <th>Excuted by</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody data-testid="version-table-tbody">
             {versionData &&
               versionData.map((version) => (
-                <tr>
+                <tr key={version._id}>
                   <td>{version.date}</td>
                   <td>{version.versionFrom}</td>
                   <td>{version.versionTo}</td>

@@ -30,145 +30,35 @@ exports[`VersionTable should match snapshot 1`] = `
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody
+          data-testid="version-table-tbody"
+        >
           <tr>
             <td>
-              1
+              11/03/2022
             </td>
             <td>
-              Mark
+              v7.8.2
             </td>
             <td>
-              Otto
+              v7.9.6
             </td>
             <td>
-              @mdo
+              @johnSmith
             </td>
           </tr>
           <tr>
             <td>
-              2
+              09/05/2022
             </td>
             <td>
-              Jacob
+              v7.7.10
             </td>
             <td>
-              Thornton
+              v7.8.2
             </td>
             <td>
-              @fat
-            </td>
-          </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              3
-            </td>
-            <td>
-              3
-            </td>
-            <td>
-              @twitter
-            </td>
-          </tr>
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Mark
-            </td>
-            <td>
-              Otto
-            </td>
-            <td>
-              @mdo
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              Jacob
-            </td>
-            <td>
-              Thornton
-            </td>
-            <td>
-              @fat
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              Jacob
-            </td>
-            <td>
-              Thornton
-            </td>
-            <td>
-              @fat
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              Jacob
-            </td>
-            <td>
-              Thornton
-            </td>
-            <td>
-              @fat
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              Jacob
-            </td>
-            <td>
-              Thornton
-            </td>
-            <td>
-              @fat
-            </td>
-          </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              3
-            </td>
-            <td>
-              3
-            </td>
-            <td>
-              @twitter
-            </td>
-          </tr>
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Mark
-            </td>
-            <td>
-              Otto
-            </td>
-            <td>
-              @mdo
+              @billy1234
             </td>
           </tr>
         </tbody>
