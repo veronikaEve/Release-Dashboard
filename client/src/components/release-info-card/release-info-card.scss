@@ -2,4 +2,17 @@
 
 .release-info-card {
     box-shadow: variables.$boxShadow;
+    border-radius: 0;
+
+    .card-header {
+        font-weight: bolder !important;
+        background-color: $gray-200;
+        border-radius: 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 }

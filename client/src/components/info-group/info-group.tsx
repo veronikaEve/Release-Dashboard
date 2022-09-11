@@ -1,14 +1,15 @@
 import { Col, Row } from "react-bootstrap";
 
-const InfoGroup = () => {
+type PropTypes = {
+  label: string;
+  data: string;
+};
+
+const InfoGroup = ({ label, data }: PropTypes) => {
   return (
     <Row className="info-group">
-      <Col className="info-group__label" md={4}>
-        Name:
-      </Col>
-      <Col className="info-group__info" md={8}>
-        Wazzaaaap
-      </Col>
+      <Col className="info-group__label">{label}</Col>
+      <Col className="info-group__info">{data}</Col>
     </Row>
   );
 };

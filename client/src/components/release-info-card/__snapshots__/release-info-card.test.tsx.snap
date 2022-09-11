@@ -17,56 +17,70 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         class="info-group row"
       >
         <div
-          class="info-group__label col-md-4"
+          class="info-group__label col"
         >
-          Name:
+          Branch name
         </div>
         <div
-          class="info-group__info col-md-8"
+          class="info-group__info col"
         >
-          Wazzaaaap
-        </div>
-      </div>
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col-md-4"
-        >
-          Name:
-        </div>
-        <div
-          class="info-group__info col-md-8"
-        >
-          Wazzaaaap
+          wha
         </div>
       </div>
       <div
         class="info-group row"
       >
         <div
-          class="info-group__label col-md-4"
+          class="info-group__label col"
         >
-          Name:
+          Current version
         </div>
         <div
-          class="info-group__info col-md-8"
+          class="info-group__info col"
         >
-          Wazzaaaap
+          ehhh
         </div>
       </div>
       <div
         class="info-group row"
       >
         <div
-          class="info-group__label col-md-4"
+          class="info-group__label col"
         >
-          Name:
+          Commit hash
         </div>
         <div
-          class="info-group__info col-md-8"
+          class="info-group__info col"
         >
-          Wazzaaaap
+          grsfe
+        </div>
+      </div>
+      <div
+        class="info-group row"
+      >
+        <div
+          class="info-group__label col"
+        >
+          Last Update
+        </div>
+        <div
+          class="info-group__info col"
+        >
+          fvr
+        </div>
+      </div>
+      <div
+        class="info-group row"
+      >
+        <div
+          class="info-group__label col"
+        >
+          Opened By
+        </div>
+        <div
+          class="info-group__info col"
+        >
+          cswwww
         </div>
       </div>
     </div>

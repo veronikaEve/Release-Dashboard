@@ -6,14 +6,14 @@ exports[`InfoGroup should match snapshot 1`] = `
     class="info-group row"
   >
     <div
-      class="info-group__label col-md-4"
+      class="info-group__label col"
     >
-      Name:
+      test label
     </div>
     <div
-      class="info-group__info col-md-8"
+      class="info-group__info col"
     >
-      Wazzaaaap
+      data data
     </div>
   </div>
 </DocumentFragment>

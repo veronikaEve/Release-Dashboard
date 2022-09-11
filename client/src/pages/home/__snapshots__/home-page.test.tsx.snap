@@ -4,6 +4,7 @@ exports[`HomePage should match snapshot 1`] = `
 <DocumentFragment>
   <div
     class="col-md-5"
+    style="display: grid; gap: 40px;"
   >
     <div
       class="table-wrapper"
@@ -66,6 +67,89 @@ exports[`HomePage should match snapshot 1`] = `
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div
+      class="release-info-card text-center card"
+    >
+      <div
+        class="card-header"
+      >
+        Release Info
+      </div>
+      <div
+        class="card-body"
+      >
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col"
+          >
+            Branch name
+          </div>
+          <div
+            class="info-group__info col"
+          >
+            wha
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col"
+          >
+            Current version
+          </div>
+          <div
+            class="info-group__info col"
+          >
+            ehhh
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col"
+          >
+            Commit hash
+          </div>
+          <div
+            class="info-group__info col"
+          >
+            grsfe
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col"
+          >
+            Last Update
+          </div>
+          <div
+            class="info-group__info col"
+          >
+            fvr
+          </div>
+        </div>
+        <div
+          class="info-group row"
+        >
+          <div
+            class="info-group__label col"
+          >
+            Opened By
+          </div>
+          <div
+            class="info-group__info col"
+          >
+            cswwww
+          </div>
+        </div>
       </div>
     </div>
   </div>
