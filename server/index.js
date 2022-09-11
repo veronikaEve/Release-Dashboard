@@ -9,13 +9,14 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const dbo = require("./database/connection");
+const mongoDBObject = require("./database/connection");
 
 app.use('/releases', require('./routes/mongoDB'));
+app.use('/github', require('./routes/github'));
 
 app.listen(port, () => {
     // perform a database connection when server starts
-    dbo.connectToServer(function (err) {
+    mongoDBObject.connectToServer(function (err) {
         if (err) console.error(err);
 
     });
