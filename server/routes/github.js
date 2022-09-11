@@ -35,4 +35,14 @@ router.get("/release-prs", async (req, res) => {
     }).catch(err => console.log("❗️ Something went wrong: ", err));
 })
 
+router.get("/commit-details/:sha", async (req, res) => {
+    await octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+        ref: req.params.sha,
+    }).then(result => {
+        res.send(result);
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
+})
+
 module.exports = router;
