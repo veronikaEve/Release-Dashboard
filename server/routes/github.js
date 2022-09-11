@@ -10,14 +10,29 @@ const octokit = new Octokit({
 
 const releaseBranchRegex = /^tv_release/g;
 
+const repoDetails = {
+    owner: 'veronikaEve',
+    repo: 'simple-mock-app',
+}
+
 router.get("/release-branches", async (req, res) => {
     await octokit.request('GET /repos/{owner}/{repo}/branches', {
-        owner: 'veronikaEve',
-        repo: 'simple-mock-app',
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
     }).then(result => {
-        const releaseBranches = result.data.filter(branch => branch.name.match(releaseBranchRegex))
+        const releaseBranches = result.data.filter(branch => branch.name.match(releaseBranchRegex));
         res.send(releaseBranches);
-    }).catch(err => console.log("couldn't get branches", err))
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
 });
+
+router.get("/release-prs", async (req, res) => {
+    await octokit.request('GET /repos/{owner}/{repo}/pulls', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+    }).then(result => {
+        const releasePRs = result.data.filter(PR => PR.head.ref.match(releaseBranchRegex));
+        res.send(releasePRs);
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
+})
 
 module.exports = router;
