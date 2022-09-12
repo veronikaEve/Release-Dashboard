@@ -35,9 +35,13 @@ exports[`HomePage should match snapshot 1`] = `
             </tr>
           </thead>
           <tbody
-            data-testid="version-table-tbody"
+            class="version-table__body"
+            data-testid="version-table__body"
           >
-            <tr>
+            <tr
+              class=""
+              data-testid="table-row-0"
+            >
               <td>
                 11/03/2022
               </td>
@@ -51,7 +55,10 @@ exports[`HomePage should match snapshot 1`] = `
                 @johnSmith
               </td>
             </tr>
-            <tr>
+            <tr
+              class=""
+              data-testid="table-row-1"
+            >
               <td>
                 09/05/2022
               </td>

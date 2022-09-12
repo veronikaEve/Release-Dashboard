@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Table } from "react-bootstrap";
 import { VersionData } from "../../@types";
 
@@ -6,6 +7,11 @@ type PropTypes = {
 };
 
 const VersionTable = ({ versionData }: PropTypes) => {
+  const [selectedRow, setSelectedRow] = useState<VersionData>();
+
+  const rowClass = (version_id: string) =>
+    selectedRow?._id === version_id ? "selected" : "";
+
   return (
     <div className="table-wrapper">
       <div className="table-wrapper__scroll">
@@ -24,10 +30,18 @@ const VersionTable = ({ versionData }: PropTypes) => {
               <th>Excuted by</th>
             </tr>
           </thead>
-          <tbody data-testid="version-table-tbody">
+          <tbody
+            className="version-table__body"
+            data-testid="version-table__body"
+          >
             {versionData &&
-              versionData.map((version) => (
-                <tr key={version._id}>
+              versionData.map((version, index) => (
+                <tr
+                  key={version._id}
+                  onClick={() => setSelectedRow(version)}
+                  className={rowClass(version._id)}
+                  data-testid={`table-row-${index}`}
+                >
                   <td>{version.date}</td>
                   <td>{version.versionFrom}</td>
                   <td>{version.versionTo}</td>

@@ -22,3 +22,9 @@
         font-weight: bolder !important;
     }
 }
+
+.version-table__body {
+    & tr.selected {
+        background-color: $gray-300;
+    }
+}
