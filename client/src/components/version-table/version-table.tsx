@@ -1,17 +1,14 @@
-import { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Table } from "react-bootstrap";
 import { VersionData } from "../../@types";
+import VersionTableBody from "./version-table-body";
 
 type PropTypes = {
   versionData: VersionData[];
+  setReleaseInfo: Dispatch<SetStateAction<undefined>>;
 };
 
-const VersionTable = ({ versionData }: PropTypes) => {
-  const [selectedRow, setSelectedRow] = useState<VersionData>();
-
-  const rowClass = (version_id: string) =>
-    selectedRow?._id === version_id ? "selected" : "";
-
+const VersionTable = ({ versionData, setReleaseInfo }: PropTypes) => {
   return (
     <div className="table-wrapper">
       <div className="table-wrapper__scroll">
@@ -30,25 +27,12 @@ const VersionTable = ({ versionData }: PropTypes) => {
               <th>Excuted by</th>
             </tr>
           </thead>
-          <tbody
-            className="version-table__body"
-            data-testid="version-table__body"
-          >
-            {versionData &&
-              versionData.map((version, index) => (
-                <tr
-                  key={version._id}
-                  onClick={() => setSelectedRow(version)}
-                  className={rowClass(version._id)}
-                  data-testid={`table-row-${index}`}
-                >
-                  <td>{version.date}</td>
-                  <td>{version.versionFrom}</td>
-                  <td>{version.versionTo}</td>
-                  <td>{version.associatedUser}</td>
-                </tr>
-              ))}
-          </tbody>
+          {versionData && (
+            <VersionTableBody
+              versionData={versionData}
+              setReleaseInfo={setReleaseInfo}
+            />
+          )}
         </Table>
       </div>
     </div>

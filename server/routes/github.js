@@ -15,6 +15,27 @@ const repoDetails = {
     repo: 'simple-mock-app',
 }
 
+let releasePRs;
+
+const getReleasePRs = async () => {
+    await octokit.request('GET /repos/{owner}/{repo}/pulls', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+    }).then(result => {
+        releasePR = result.data.filter(PR => PR.head.ref.match(releaseBranchRegex));
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
+}
+
+const getReleasePR = async (releaseBranch) => {
+    await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+        pull_number: req.params.pull_number
+    }).then(result => {
+        releasePR = result.data.find(PR => PR.head.ref.match(releaseBranch));
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
+}
+
 router.get("/release-branches", async (req, res) => {
     await octokit.request('GET /repos/{owner}/{repo}/branches', {
         owner: repoDetails.owner,
@@ -26,14 +47,33 @@ router.get("/release-branches", async (req, res) => {
 });
 
 router.get("/release-prs", async (req, res) => {
+    getReleasePRs().then(() =>
+        res.send(releasePRs)
+    )
+})
+
+router.get("/release-prs/:branch_name", async (req, res) => {
     await octokit.request('GET /repos/{owner}/{repo}/pulls', {
         owner: repoDetails.owner,
         repo: repoDetails.repo,
     }).then(result => {
-        const releasePRs = result.data.filter(PR => PR.head.ref.match(releaseBranchRegex));
-        res.send(releasePRs);
+        const releasePR = result.data.find(PR => PR.head.ref.match(req.params.branch_name));
+        console.log(releasePR)
+        res.send(releasePR);
     }).catch(err => console.log("❗️ Something went wrong: ", err));
 })
+
+
+router.get("/get-branch-data/:branch_name", async (req, res) => {
+    await octokit.request('GET /repos/{owner}/{repo}/branches/{branch}', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+        branch: req.params.branch_name
+    }).then(result => {
+        res.send(result.data);
+    }).catch(err => console.log("❗️ Something went wrong: ", err));
+})
+
 
 router.get("/commit-details/:sha", async (req, res) => {
     await octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', {
@@ -46,3 +86,5 @@ router.get("/commit-details/:sha", async (req, res) => {
 })
 
 module.exports = router;
+
+
