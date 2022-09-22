@@ -7,6 +7,7 @@ import { mockVersionData } from "../../utils/test-utils/mock-data";
 describe("VersionTable", () => {
   let props = {
     versionData: mockVersionData,
+    setReleaseInfo: jest.fn,
   };
 
   test("should match snapshot", () => {
@@ -57,3 +58,5 @@ describe("VersionTable", () => {
     });
   });
 });
+
+// Do i need to mock and write tests for the api fetch?

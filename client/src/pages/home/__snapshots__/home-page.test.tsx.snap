@@ -39,7 +39,7 @@ exports[`HomePage should match snapshot 1`] = `
             data-testid="version-table__body"
           >
             <tr
-              class=""
+              class="selected"
               data-testid="table-row-0"
             >
               <td>
@@ -97,9 +97,7 @@ exports[`HomePage should match snapshot 1`] = `
           </div>
           <div
             class="info-group__info col"
-          >
-            wha
-          </div>
+          />
         </div>
         <div
           class="info-group row"
@@ -112,7 +110,7 @@ exports[`HomePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            ehhh
+            1.4
           </div>
         </div>
         <div
@@ -125,9 +123,7 @@ exports[`HomePage should match snapshot 1`] = `
           </div>
           <div
             class="info-group__info col"
-          >
-            grsfe
-          </div>
+          />
         </div>
         <div
           class="info-group row"
@@ -139,9 +135,7 @@ exports[`HomePage should match snapshot 1`] = `
           </div>
           <div
             class="info-group__info col"
-          >
-            fvr
-          </div>
+          />
         </div>
         <div
           class="info-group row"
@@ -153,9 +147,7 @@ exports[`HomePage should match snapshot 1`] = `
           </div>
           <div
             class="info-group__info col"
-          >
-            cswwww
-          </div>
+          />
         </div>
       </div>
     </div>

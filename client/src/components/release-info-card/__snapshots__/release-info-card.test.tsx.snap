@@ -24,7 +24,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         <div
           class="info-group__info col"
         >
-          wha
+          test_branch_name
         </div>
       </div>
       <div
@@ -38,7 +38,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         <div
           class="info-group__info col"
         >
-          ehhh
+          1.1.1
         </div>
       </div>
       <div
@@ -52,7 +52,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         <div
           class="info-group__info col"
         >
-          grsfe
+          1ab2c3
         </div>
       </div>
       <div
@@ -66,7 +66,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         <div
           class="info-group__info col"
         >
-          fvr
+          testName
         </div>
       </div>
       <div
@@ -80,7 +80,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
         <div
           class="info-group__info col"
         >
-          cswwww
+          anotherTestName
         </div>
       </div>
     </div>

@@ -1,11 +1,10 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { Col } from "react-bootstrap";
 
 import VersionTable from "../../components/version-table/version-table";
 import ReleaseInfoCard from "../../components/release-info-card/release-info-card";
 
 import { VersionData } from "../../@types";
-import { useState } from "react";
 import { releaseInfoTransformer } from "../../utils/transformers/release-info-transformer";
 
 type PropTypes = {
@@ -13,15 +12,9 @@ type PropTypes = {
 };
 
 const HomePage = ({ versionData }: PropTypes) => {
-  const [releaseInfo, setReleaseInfo] = useState();
+  const [releaseInfo, setReleaseInfo] = useState<unknown>();
 
-  const transformedReleaseInfo =
-    releaseInfo && releaseInfoTransformer(releaseInfo);
-
-  useEffect(
-    () => console.log("blah", releaseInfo),
-    [releaseInfo, setReleaseInfo]
-  );
+  const transformedReleaseInfo = releaseInfoTransformer(releaseInfo);
 
   return (
     <Col md={5} style={{ display: "grid", gap: "40px" }}>

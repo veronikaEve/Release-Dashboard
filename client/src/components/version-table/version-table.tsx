@@ -5,7 +5,7 @@ import VersionTableBody from "./version-table-body";
 
 type PropTypes = {
   versionData: VersionData[];
-  setReleaseInfo: Dispatch<SetStateAction<undefined>>;
+  setReleaseInfo: Dispatch<SetStateAction<unknown>>;
 };
 
 const VersionTable = ({ versionData, setReleaseInfo }: PropTypes) => {

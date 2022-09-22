@@ -35,7 +35,7 @@ exports[`VersionTable should match snapshot 1`] = `
           data-testid="version-table__body"
         >
           <tr
-            class=""
+            class="selected"
             data-testid="table-row-0"
           >
             <td>

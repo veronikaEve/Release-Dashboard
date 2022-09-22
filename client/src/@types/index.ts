@@ -6,3 +6,11 @@ export type VersionData = {
   versionTo: string;
   _id: string;
 };
+
+export type ReleaseInfoType = {
+  branchName: string;
+  currentVersion: string;
+  commitHash: string;
+  openedBy: string;
+  lastUpdatedBy: string;
+};
