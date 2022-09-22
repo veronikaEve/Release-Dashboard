@@ -2,7 +2,7 @@ import { VersionData } from "../../@types";
 
 export const getSpecificReleaseData = async (releaseVersion: VersionData) => {
   return fetch(
-    `http://localhost:5000/github/get-branch-data/${releaseVersion.releaseBranch}`,
+    `http://localhost:5000/github/PRs/${releaseVersion.releaseBranch}`,
     {
       method: "GET",
       headers: {

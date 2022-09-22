@@ -14,7 +14,6 @@ const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
     selectedRow?._id === version_id ? "selected" : "";
 
   const onCLick = (version: VersionData) => {
-    console.log("ah");
     setSelectedRow(version);
   };
 
