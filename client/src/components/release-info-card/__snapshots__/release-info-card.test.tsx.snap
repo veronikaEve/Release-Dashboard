@@ -13,76 +13,7 @@ exports[`ReleaseInfoCard should match snapshot 1`] = `
     <div
       class="card-body"
     >
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col"
-        >
-          Branch name
-        </div>
-        <div
-          class="info-group__info col"
-        >
-          test_branch_name
-        </div>
-      </div>
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col"
-        >
-          Current version
-        </div>
-        <div
-          class="info-group__info col"
-        >
-          1.1.1
-        </div>
-      </div>
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col"
-        >
-          Commit hash
-        </div>
-        <div
-          class="info-group__info col"
-        >
-          1ab2c3
-        </div>
-      </div>
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col"
-        >
-          Last Update
-        </div>
-        <div
-          class="info-group__info col"
-        >
-          testName
-        </div>
-      </div>
-      <div
-        class="info-group row"
-      >
-        <div
-          class="info-group__label col"
-        >
-          Opened By
-        </div>
-        <div
-          class="info-group__info col"
-        >
-          anotherTestName
-        </div>
-      </div>
+      Mock child
     </div>
   </div>
 </DocumentFragment>
