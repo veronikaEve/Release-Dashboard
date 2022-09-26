@@ -27,7 +27,29 @@ exports[`NewReleasePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            wha
+            <select
+              aria-label="Default select example"
+              class="form-select"
+            >
+              <option>
+                Choose a branch
+              </option>
+              <option
+                value="1"
+              >
+                xtv_release_1.1
+              </option>
+              <option
+                value="2"
+              >
+                xtv_release_1.2
+              </option>
+              <option
+                value="3"
+              >
+                xtv_release_1.3
+              </option>
+            </select>
           </div>
         </div>
         <div
@@ -41,7 +63,7 @@ exports[`NewReleasePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            ehhh
+            string
           </div>
         </div>
         <div
@@ -55,7 +77,7 @@ exports[`NewReleasePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            grsfe
+            string
           </div>
         </div>
         <div
@@ -69,7 +91,7 @@ exports[`NewReleasePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            fvr
+            string
           </div>
         </div>
         <div
@@ -83,7 +105,7 @@ exports[`NewReleasePage should match snapshot 1`] = `
           <div
             class="info-group__info col"
           >
-            cswwww
+            string
           </div>
         </div>
       </div>

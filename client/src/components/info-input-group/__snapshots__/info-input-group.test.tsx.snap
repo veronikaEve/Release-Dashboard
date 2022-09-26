@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoInputGroup should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="info-group row"
+  >
+    <div
+      class="info-group__label col"
+    >
+      test label
+    </div>
+    <div
+      class="info-group__info col"
+    >
+      <select
+        aria-label="Default select example"
+        class="form-select"
+      >
+        <option>
+          Choose a branch
+        </option>
+        <option
+          value="1"
+        >
+          xtv_release_1.1
+        </option>
+        <option
+          value="2"
+        >
+          xtv_release_1.2
+        </option>
+        <option
+          value="3"
+        >
+          xtv_release_1.3
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;
