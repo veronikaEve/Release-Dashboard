@@ -53,6 +53,16 @@ router.get("/PRs/:branch_name", async (req, res) => {
         .catch((err) => console.log("Couldn't get PR details ", err))
 })
 
+router.get("/release-branches", async (req, res) => {
+    await octokit.request('GET /repos/{owner}/{repo}/branches', {
+        owner: repoDetails.owner,
+        repo: repoDetails.repo,
+    }).then(result => {
+        const releaseBranches = result.data.filter(branch => branch.name.match(releaseBranchRegex))
+        res.send(releaseBranches);
+    }).catch(err => console.log("couldn't get branches", err))
+});
+
 module.exports = router;
 
 

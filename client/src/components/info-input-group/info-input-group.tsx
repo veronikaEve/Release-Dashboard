@@ -1,20 +1,36 @@
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import { getSpecificReleaseData } from "../../services/github";
 
 type PropTypes = {
   label: string;
-  inputOptions: string;
+  inputOptions: any[];
+  setReleaseInfo: Dispatch<SetStateAction<unknown>>;
 };
 
-const InfoInputGroup = ({ label, inputOptions }: PropTypes) => {
+const InfoInputGroup = ({ label, inputOptions, setReleaseInfo }: PropTypes) => {
+  const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    getSpecificReleaseData(event.target.value)
+      .then((result) => {
+        setReleaseInfo(result);
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <Row className="info-group">
       <Col className="info-group__label">{label}</Col>
       <Col className="info-group__info">
-        <Form.Select aria-label="Default select example">
+        <Form.Select as="select" onChange={(e) => onChange(e)}>
           <option>Choose a branch</option>
-          <option value="1">xtv_release_1.1</option>
-          <option value="2">xtv_release_1.2</option>
-          <option value="3">xtv_release_1.3</option>
+          {inputOptions &&
+            inputOptions
+              .map((branch, index) => (
+                <option key={index} value={branch?.name}>
+                  {branch?.name}
+                </option>
+              ))
+              .reverse()}
         </Form.Select>
       </Col>
     </Row>

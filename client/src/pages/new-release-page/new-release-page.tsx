@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 
+import { getReleaseBranches } from "../../services/github";
 import ReleaseInfoCard from "../../components/release-info-card/release-info-card";
 import InfoGroup from "../../components/info-group/info-group";
 import InfoInputGroup from "../../components/info-input-group/info-input-group";
 
-const transformedReleaseInfo = {
-  branchName: "string",
-  currentVersion: "string",
-  commitHash: "string",
-  openedBy: "string",
-  lastUpdatedBy: "string",
-};
+import { releaseInfoTransformer } from "../../utils/transformers/release-info-transformer";
 
 const NewReleasePage: React.FC = () => {
+  const [releaseBranches, setReleaseBranches] = useState<any[]>([]); // any[] not very good, but stops typescript from complaining about branch.name
+  const [releaseInfo, setReleaseInfo] = useState<unknown>();
+
+  const transformedReleaseInfo = releaseInfoTransformer(releaseInfo);
+
+  useEffect(() => {
+    getReleaseBranches()
+      .then((result) => {
+        setReleaseBranches(result);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <Col md={4}>
       <ReleaseInfoCard>
-        <InfoInputGroup label="Branch name" inputOptions={""} />
+        <InfoInputGroup
+          label="Branch name"
+          inputOptions={releaseBranches}
+          setReleaseInfo={setReleaseInfo}
+        />
         <InfoGroup
           label="Current version"
           data={transformedReleaseInfo?.currentVersion}

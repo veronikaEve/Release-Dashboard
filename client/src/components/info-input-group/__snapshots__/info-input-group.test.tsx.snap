@@ -14,26 +14,26 @@ exports[`InfoInputGroup should match snapshot 1`] = `
       class="info-group__info col"
     >
       <select
-        aria-label="Default select example"
+        as="select"
         class="form-select"
       >
         <option>
           Choose a branch
         </option>
         <option
-          value="1"
+          value="test_branch_3"
         >
-          xtv_release_1.1
+          test_branch_3
         </option>
         <option
-          value="2"
+          value="test_branch_2"
         >
-          xtv_release_1.2
+          test_branch_2
         </option>
         <option
-          value="3"
+          value="test_branch_1"
         >
-          xtv_release_1.3
+          test_branch_1
         </option>
       </select>
     </div>

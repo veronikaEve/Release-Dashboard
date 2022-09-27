@@ -18,7 +18,7 @@ const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
   };
 
   useEffect(() => {
-    getSpecificReleaseData(selectedRow)
+    getSpecificReleaseData(selectedRow?.releaseBranch)
       .then((result) => {
         setReleaseInfo(result);
       })
