@@ -3,90 +3,110 @@
 exports[`NewReleasePage should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="col-md-4"
+    class="new-release-page-container container-fluid"
   >
     <div
-      class="release-info-card text-center card"
+      class="col-md-4"
     >
       <div
-        class="card-header"
-      >
-        Release Info
-      </div>
-      <div
-        class="card-body"
+        class="release-info-card text-center card"
       >
         <div
-          class="info-group row"
+          class="card-header"
+        >
+          Release Info
+        </div>
+        <div
+          class="card-body"
         >
           <div
-            class="info-group__label col"
+            class="info-group row"
           >
-            Branch name
-          </div>
-          <div
-            class="info-group__info col"
-          >
-            <select
-              as="select"
-              class="form-select"
+            <div
+              class="info-group__label col"
             >
-              <option>
-                Choose a branch
-              </option>
-            </select>
+              Branch name
+            </div>
+            <div
+              class="info-group__info col"
+            >
+              <select
+                as="select"
+                class="form-select"
+              >
+                <option>
+                  Choose a branch
+                </option>
+              </select>
+            </div>
           </div>
+          <div
+            class="info-group row"
+          >
+            <div
+              class="info-group__label col"
+            >
+              Current version
+            </div>
+            <div
+              class="info-group__info col"
+            >
+              1.4
+            </div>
+          </div>
+          <div
+            class="info-group row"
+          >
+            <div
+              class="info-group__label col"
+            >
+              Commit hash
+            </div>
+            <div
+              class="info-group__info col"
+            />
+          </div>
+          <div
+            class="info-group row"
+          >
+            <div
+              class="info-group__label col"
+            >
+              Last Update
+            </div>
+            <div
+              class="info-group__info col"
+            />
+          </div>
+          <div
+            class="info-group row"
+          >
+            <div
+              class="info-group__label col"
+            >
+              Opened By
+            </div>
+            <div
+              class="info-group__info col"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4"
+    >
+      <div
+        class="test-status-card text-center card"
+      >
+        <div
+          class="card-header"
+        >
+          Test Status
         </div>
         <div
-          class="info-group row"
-        >
-          <div
-            class="info-group__label col"
-          >
-            Current version
-          </div>
-          <div
-            class="info-group__info col"
-          >
-            1.4
-          </div>
-        </div>
-        <div
-          class="info-group row"
-        >
-          <div
-            class="info-group__label col"
-          >
-            Commit hash
-          </div>
-          <div
-            class="info-group__info col"
-          />
-        </div>
-        <div
-          class="info-group row"
-        >
-          <div
-            class="info-group__label col"
-          >
-            Last Update
-          </div>
-          <div
-            class="info-group__info col"
-          />
-        </div>
-        <div
-          class="info-group row"
-        >
-          <div
-            class="info-group__label col"
-          >
-            Opened By
-          </div>
-          <div
-            class="info-group__info col"
-          />
-        </div>
+          class="card-body"
+        />
       </div>
     </div>
   </div>
