@@ -12,6 +12,7 @@ import TestStatuses from "../../components/test-statuses/test-statuses";
 const NewReleasePage: React.FC = () => {
   const [releaseBranches, setReleaseBranches] = useState<any[]>([]); // any[] not very good, but stops typescript from complaining about branch.name
   const [releaseInfo, setReleaseInfo] = useState<unknown>();
+  const [testBadge, setTestBadge] = useState<string>("");
 
   const transformedReleaseInfo = releaseInfoTransformer(releaseInfo);
 
@@ -22,6 +23,14 @@ const NewReleasePage: React.FC = () => {
       })
       .catch((err) => console.error(err));
   }, []);
+
+  useEffect(() => {
+    if (transformedReleaseInfo?.branchName) {
+      setTestBadge(
+        `http://localhost:8080/api/v1/teams/main/pipelines/release-pipeline-${transformedReleaseInfo?.branchName}/jobs/unit-test/badge` // concourse needs to be running for this to be authorized and return the badge
+      );
+    }
+  }, [transformedReleaseInfo?.branchName]); // why does this re-render on every "change" if this value just stays empty?? then
 
   return (
     <Container fluid className="new-release-page-container">
@@ -51,7 +60,7 @@ const NewReleasePage: React.FC = () => {
         </ReleaseInfoCard>
       </Col>
       <Col md={4}>
-        <TestStatuses />
+        <TestStatuses badge={testBadge} />
       </Col>
     </Container>
   );

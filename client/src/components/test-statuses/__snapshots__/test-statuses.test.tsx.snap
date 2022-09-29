@@ -12,7 +12,25 @@ exports[`TestStatuses should match snapshot 1`] = `
     </div>
     <div
       class="card-body"
-    />
+    >
+      <div
+        class="info-group row"
+      >
+        <div
+          class="info-group__label col"
+        >
+          Unit test
+        </div>
+        <div
+          class="info-group__info col"
+        >
+          <img
+            alt="status badge"
+            src="img.url"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

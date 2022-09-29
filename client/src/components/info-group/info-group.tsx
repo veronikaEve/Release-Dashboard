@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 
 type PropTypes = {
   label: string;
-  data: string;
+  data: any;
 };
 
 const InfoGroup = ({ label, data }: PropTypes) => {
