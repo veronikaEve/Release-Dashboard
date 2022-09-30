@@ -11,6 +11,7 @@ app.use(express.json());
 
 const mongoDBObject = require("./database/connection");
 
+app.use('/concourse', require('./routes/concourse'));
 app.use('/releases', require('./routes/mongoDB'));
 app.use('/github', require('./routes/github'));
 
