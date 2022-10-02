@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RollbackPage should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="col-md-5"
+    style="display: grid; gap: 40px;"
+  >
+    <button
+      class="btn btn-primary"
+      type="button"
+    >
+      Rollback 
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -84,7 +84,12 @@ exports[`renders correctly 1`] = `
         data-testid="roll-back"
         type="button"
       >
-        Roll Back
+        <a
+          class="nav-link"
+          href="/rollback/tv_release_1.5"
+        >
+          Roll Back
+        </a>
       </button>
       <button
         class="btn btn-primary btn-sm"

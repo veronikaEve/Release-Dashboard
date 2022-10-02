@@ -15,7 +15,9 @@ const SecondaryHeader: React.FC = () => {
         View Info
       </Button>
       <Button size="sm" data-testid="roll-back">
-        Roll Back
+        <Nav.Link as={NavLink} to="rollback/tv_release_1.5">
+          Roll Back
+        </Nav.Link>
       </Button>
       <Button size="sm" data-testid="new-release">
         <Nav.Link as={NavLink} to="new-release">

@@ -12,6 +12,7 @@ import NewReleasePage from "../../pages/new-release-page/new-release-page";
 import { VersionData } from "../../@types";
 
 import { getAllReleaseData } from "../../services/database";
+import RollbackPage from "../../pages/rollback/rollback-page";
 
 const mins15 = 900000;
 
@@ -48,6 +49,7 @@ function App() {
               element={<HomePage versionData={versionData} />}
             />
             <Route path="/new-release" element={<NewReleasePage />} />
+            <Route path="/rollback/:branch" element={<RollbackPage />} />
             <Route path="/about" />
           </Routes>
         </Container>
