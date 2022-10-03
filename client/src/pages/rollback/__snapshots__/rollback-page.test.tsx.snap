@@ -3,15 +3,20 @@
 exports[`RollbackPage should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="col-md-5"
-    style="display: grid; gap: 40px;"
+    class="container"
+    data-testid="rollback-page"
   >
-    <button
-      class="btn btn-primary"
-      type="button"
+    <div
+      class="col-md-5"
+      style="display: grid; gap: 40px;"
     >
-      Rollback 
-    </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+      >
+        Roll back spinach
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

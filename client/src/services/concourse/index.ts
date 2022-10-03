@@ -1,14 +1,10 @@
-export const getTestBadge = async (releaseBranch: string) => {
-  //   console.log(releaseBranch);
-  //   return (
-  //     fetch(
-  //       `http://localhost:8080/api/v1/teams/main/pipelines/release-pipeline-${releaseBranch}/jobs/unit-test/badge`,
-  //       {
-  //         mode: "no-cors",
-  //       }
-  //     )
-  //       .then((response) => response.json())
-  //       //   .then((response) => console.log("🦋", response))
-  //       .catch((err) => console.log("Couldn't get badge", err))
-  //   );
+export const runJob = (releaseBranch: string, jobName: string) => {
+  return fetch(
+    `http://localhost:5000/concourse/run-job/${releaseBranch}/${jobName}`,
+    {
+      method: "GET",
+    }
+  )
+    .then((response) => response.status)
+    .catch((err) => console.error("Something went wrong", err));
 };

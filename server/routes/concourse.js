@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { execSync } = require('child_process');
 
-router.get("/release/:branch_name", async (req, res) => {
-    execSync(`zx ./concourse/trigger-release.mjs ${req.params.branch_name}`);
-});
+const concourseService = require('../concourse/concourse-service');
 
-router.get("/rollback/:branch_name", async (req, res) => {
-    execSync(`zx ./concourse/trigger-rollback.mjs ${req.params.branch_name}`);
+router.get("/run-job/:branch_name/:job_name", async (req, res) => {
+    const { branch_name, job_name } = req.params;
+
+    const runJobResponse = concourseService.runJob(branch_name, job_name);
+
+    if (runJobResponse) {
+        res.status(200).send();
+    } else {
+        res.status(500).send();
+    }
 });
 
 module.exports = router;
