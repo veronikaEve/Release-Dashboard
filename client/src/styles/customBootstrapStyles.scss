@@ -1,13 +1,14 @@
-@use "../../styles/variables.scss";
+@use "./variables.scss";
 
-.release-info-card {
+.card {
     box-shadow: variables.$boxShadow;
-    border-radius: 0;
+    border-color: $gray-200;
+    border-radius: 3px;
 
     .card-header {
         font-weight: bolder !important;
-        background-color: $gray-200;
-        border-radius: 0;
+        background-color: white;
+        border-bottom: none;
     }
 
     .card-body {
