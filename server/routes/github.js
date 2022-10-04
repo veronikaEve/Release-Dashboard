@@ -1,43 +1,8 @@
 const express = require('express');
-const { Octokit } = require("octokit");
-
+const { getReleaseBranches, getPRDetails, getCommitDetails } = require('../github/github-service');
 const router = express.Router();
-const GITHUB_AUTH_TOKEN = process.env.GITHUB_AUTH_TOKEN;
 
-const octokit = new Octokit({
-    auth: GITHUB_AUTH_TOKEN
-})
-
-const releaseBranchRegex = /^tv_release/g;
-
-const repoDetails = {
-    owner: 'veronikaEve',
-    repo: 'simple-mock-app',
-}
-
-let releasePRs;
-
-const getPRDetails = async (branch_name) => {
-    return octokit.request('GET /repos/{owner}/{repo}/pulls', {
-        owner: repoDetails.owner,
-        repo: repoDetails.repo,
-    }).then(result => {
-        const releasePR = result.data.find(PR => PR.head.ref.match(branch_name));
-        return releasePR;
-    }).catch(err => console.log("❗️ Something went wrong in getPRDetails: ", err));
-}
-
-const getCommitDetails = async (sha) => {
-    return octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', {
-        owner: repoDetails.owner,
-        repo: repoDetails.repo,
-        ref: sha,
-    }).then(result => {
-        return result.data
-    }).catch(err => console.log("❗️ Something went wrong in getCommitDetails: ", err));
-}
-
-router.get("/PRs/:branch_name", async (req, res) => {
+router.get("/PRs/:branch_name", (req, res) => {
     let PRDetails;
     let latestCommitDetails;
 
@@ -47,20 +12,17 @@ router.get("/PRs/:branch_name", async (req, res) => {
             getCommitDetails(PRDetails.head.sha)
                 .then((result) => latestCommitDetails = result)
                 .then(() =>
-                    res.send({ PRDetails, latestCommitDetails })) // the actual sending to client
-                .catch((err) => console.log("Couldn't get commit details ", err))
+                    res.send({ PRDetails, latestCommitDetails }))
+                .catch((err) => console.error("Couldn't get commit details ", err))
         })
-        .catch((err) => console.log("Couldn't get PR details ", err))
+        .catch((err) => console.error("Couldn't get PR details ", err))
 })
 
-router.get("/release-branches", async (req, res) => {
-    await octokit.request('GET /repos/{owner}/{repo}/branches', {
-        owner: repoDetails.owner,
-        repo: repoDetails.repo,
-    }).then(result => {
-        const releaseBranches = result.data.filter(branch => branch.name.match(releaseBranchRegex))
-        res.send(releaseBranches);
-    }).catch(err => console.log("couldn't get branches", err))
+router.get("/release-branches", (req, res) => {
+
+    getReleaseBranches()
+        .then((response) => res.send(response))
+        .catch((err) => console.error("Couldn't get release branches ", err))
 });
 
 module.exports = router;
