@@ -1,12 +1,14 @@
 const express = require('express');
-const { getReleaseBranches, getPRDetails, getCommitDetails } = require('../github/github-service');
+const { getPR, getCommitDetails } = require('../github/github-service');
 const router = express.Router();
 
 router.get("/PRs/:branch_name", (req, res) => {
+    const branch = req.params.branch_name
+
     let PRDetails;
     let latestCommitDetails;
 
-    getPRDetails(req.params.branch_name)
+    getPR(branch)
         .then((response) => PRDetails = response)
         .then(() => {
             getCommitDetails(PRDetails.head.sha)
