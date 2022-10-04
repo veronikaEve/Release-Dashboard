@@ -35,6 +35,19 @@ const githubService = {
         }
     },
 
+    getPackageJsonContent: async (ref) => {
+        try {
+            const result = await octokit.request('GET /repos/{owner}/{repo}/contents/package.json?ref={ref}', {
+                owner: repoDetails.owner,
+                repo: repoDetails.repo,
+                ref: ref
+            });
+            return Buffer.from(result.data.content, 'base64');
+        } catch (err) {
+            return console.error("❗️ Something went wrong in getPackageJsonContent:", err);
+        }
+    },
+
     getReleaseBranches: async () => {
         try {
             const result = await octokit.request('GET /repos/{owner}/{repo}/branches', {
