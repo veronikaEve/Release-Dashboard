@@ -8,6 +8,7 @@ import InfoInputGroup from "../../components/info-input-group/info-input-group";
 
 import { releaseInfoTransformer } from "../../utils/transformers/release-info-transformer";
 import TestStatuses from "../../components/test-statuses/test-statuses";
+import ActionCard from "../../components/action-card/action-card";
 
 const NewReleasePage: React.FC = () => {
   const [releaseBranches, setReleaseBranches] = useState<any[]>([]); // any[] not very good, but stops typescript from complaining about branch.name
@@ -61,6 +62,9 @@ const NewReleasePage: React.FC = () => {
       </Col>
       <Col md={4}>
         <TestStatuses badge={testBadge} />
+      </Col>
+      <Col md={4}>
+        <ActionCard />
       </Col>
     </Container>
   );

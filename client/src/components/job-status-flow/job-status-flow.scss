@@ -1,0 +1,26 @@
+.job-status-flow-container {
+    display: flex;
+    padding: 0;
+}
+
+.job-statuses {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+.job_statuses__status {
+    text-align: start;
+    padding: 5px 10px;
+    border-style: solid;
+    border-width: thin;
+    border-color: $gray-300;
+    border-radius: 5px;
+}
+
+.left-stick {
+    width: 5px;
+    background-color: $gray-300;
+}
