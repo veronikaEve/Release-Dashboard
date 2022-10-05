@@ -109,9 +109,7 @@ exports[`HomePage should match snapshot 1`] = `
           </div>
           <div
             class="info-group__info col"
-          >
-            1.4
-          </div>
+          />
         </div>
         <div
           class="info-group row"
