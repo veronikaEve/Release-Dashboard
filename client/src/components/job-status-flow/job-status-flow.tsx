@@ -13,8 +13,11 @@ const JobStatusFlow = ({ statuses }: PropTypes) => {
       <Container fluid className="job-statuses">
         <>
           {statuses.length ? (
-            statuses.map((status) => (
-              <div className={`job_statuses__status ${status.statusCode}`}>
+            statuses.map((status, index) => (
+              <div
+                key={index}
+                className={`job_statuses__status ${status.statusCode}`}
+              >
                 {status.message}
               </div>
             ))
