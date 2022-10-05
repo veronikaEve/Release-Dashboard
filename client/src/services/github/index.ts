@@ -10,7 +10,7 @@ export const getSpecificReleaseData = async (releaseBranch: string) => {
 };
 
 export const getReleaseBranches = async () => {
-  return fetch(`http://localhost:5000/github//release-branches`, {
+  return fetch(`http://localhost:5000/github/release-branches`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

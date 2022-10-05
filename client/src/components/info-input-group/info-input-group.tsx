@@ -1,11 +1,12 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import { ReleaseInfoType } from "../../@types";
 import { getSpecificReleaseData } from "../../services/github";
 
 type PropTypes = {
   label: string;
   inputOptions: any[];
-  setReleaseInfo: Dispatch<SetStateAction<unknown>>;
+  setReleaseInfo: Dispatch<SetStateAction<ReleaseInfoType>>;
 };
 
 const InfoInputGroup = ({ label, inputOptions, setReleaseInfo }: PropTypes) => {

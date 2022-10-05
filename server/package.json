@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "start-dev": "nodemon --inspect ./index.js"
   },
   "dependencies": {
     "@octokit/auth-oauth-app": "^5.0.1",

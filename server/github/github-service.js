@@ -42,7 +42,7 @@ const githubService = {
                 repo: repoDetails.repo,
                 ref: ref
             });
-            return Buffer.from(result.data.content, 'base64');
+            return JSON.parse(Buffer.from(result.data.content, 'base64').toString("ascii"));
         } catch (err) {
             return console.error("❗️ Something went wrong in getPackageJsonContent:", err);
         }

@@ -9,8 +9,9 @@ export type VersionData = {
 
 export type ReleaseInfoType = {
   branchName: string;
-  currentVersion: string;
-  commitHash: string;
+  appVersion: string;
+  latestCommitHash: string;
   openedBy: string;
   lastUpdatedBy: string;
+  PRUrl: string;
 };

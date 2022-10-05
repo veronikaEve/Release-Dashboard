@@ -1,30 +1,24 @@
 const express = require('express');
-const { getPR, getCommitDetails } = require('../github/github-service');
+const { getReleaseDetails } = require('../github/github-response-transformer');
+const { getPR, getCommitDetails, getReleaseBranches, getPackageJsonContent } = require('../github/github-service');
 const router = express.Router();
 
-router.get("/PRs/:branch_name", (req, res) => {
-    const branch = req.params.branch_name
+router.get("/PRs/:branch_name", async (req, res) => {
+    const branch = req.params.branch_name;
 
-    let PRDetails;
-    let latestCommitDetails;
+    const PRDetails = await getPR(branch);
+    const latestCommitDetails = PRDetails && await getCommitDetails(PRDetails.head.sha);
+    const packageJsonDetails = await getPackageJsonContent(branch);
 
-    getPR(branch)
-        .then((response) => PRDetails = response)
-        .then(() => {
-            getCommitDetails(PRDetails.head.sha)
-                .then((result) => latestCommitDetails = result)
-                .then(() =>
-                    res.send({ PRDetails, latestCommitDetails }))
-                .catch((err) => console.error("Couldn't get commit details ", err))
-        })
-        .catch((err) => console.error("Couldn't get PR details ", err))
+    const releaseDetails = getReleaseDetails(PRDetails, latestCommitDetails, packageJsonDetails);
+
+    res.send(releaseDetails);
 })
 
-router.get("/release-branches", (req, res) => {
+router.get("/release-branches", async (req, res) => {
 
-    getReleaseBranches()
-        .then((response) => res.send(response))
-        .catch((err) => console.error("Couldn't get release branches ", err))
+    const releaseBranches = await getReleaseBranches();
+    res.send(releaseBranches);
 });
 
 module.exports = router;

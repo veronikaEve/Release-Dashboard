@@ -6,16 +6,17 @@ import ReleaseInfoCard from "../../components/release-info-card/release-info-car
 import InfoGroup from "../../components/info-group/info-group";
 import InfoInputGroup from "../../components/info-input-group/info-input-group";
 
-import { releaseInfoTransformer } from "../../utils/transformers/release-info-transformer";
 import TestStatuses from "../../components/test-statuses/test-statuses";
 import ActionCard from "../../components/action-card/action-card";
+import { ReleaseInfoType } from "../../@types";
+import { releaseInfoInitialValue } from "../../entry-points/default-values/release-info";
 
 const NewReleasePage: React.FC = () => {
   const [releaseBranches, setReleaseBranches] = useState<any[]>([]); // any[] not very good, but stops typescript from complaining about branch.name
-  const [releaseInfo, setReleaseInfo] = useState<unknown>();
+  const [releaseInfo, setReleaseInfo] = useState<ReleaseInfoType>(
+    releaseInfoInitialValue
+  );
   const [testBadge, setTestBadge] = useState<string>("");
-
-  const transformedReleaseInfo = releaseInfoTransformer(releaseInfo);
 
   useEffect(() => {
     getReleaseBranches()
@@ -26,12 +27,12 @@ const NewReleasePage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (transformedReleaseInfo?.branchName) {
+    if (releaseInfo?.branchName) {
       setTestBadge(
-        `http://localhost:8080/api/v1/teams/main/pipelines/release-pipeline-${transformedReleaseInfo?.branchName}/jobs/unit-test/badge` // concourse needs to be running for this to be authorized and return the badge
+        `http://localhost:8080/api/v1/teams/main/pipelines/release-pipeline-${releaseInfo?.branchName}/jobs/unit-test/badge` // concourse needs to be running for this to be authorized and return the badge
       );
     }
-  }, [transformedReleaseInfo?.branchName]); // why does this re-render on every "change" if this value just stays empty?? then
+  }, [releaseInfo?.branchName]); // why does this re-render on every "change" if this value just stays empty?? then
 
   return (
     <Container fluid className="new-release-page-container">
@@ -42,22 +43,10 @@ const NewReleasePage: React.FC = () => {
             inputOptions={releaseBranches}
             setReleaseInfo={setReleaseInfo}
           />
-          <InfoGroup
-            label="Current version"
-            data={transformedReleaseInfo?.currentVersion}
-          />
-          <InfoGroup
-            label="Commit hash"
-            data={transformedReleaseInfo?.commitHash}
-          />
-          <InfoGroup
-            label="Last Update"
-            data={transformedReleaseInfo?.openedBy}
-          />
-          <InfoGroup
-            label="Opened By"
-            data={transformedReleaseInfo?.lastUpdatedBy}
-          />
+          <InfoGroup label="Current version" data={releaseInfo?.appVersion} />
+          <InfoGroup label="Commit hash" data={releaseInfo?.latestCommitHash} />
+          <InfoGroup label="Last Update" data={releaseInfo?.openedBy} />
+          <InfoGroup label="Opened By" data={releaseInfo?.lastUpdatedBy} />
         </ReleaseInfoCard>
       </Col>
       <Col md={4}>

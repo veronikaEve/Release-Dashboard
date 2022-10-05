@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { VersionData } from "../../@types";
+import { ReleaseInfoType, VersionData } from "../../@types";
 import { getSpecificReleaseData } from "../../services/github";
 
 type PropTypes = {
   versionData: VersionData[];
-  setReleaseInfo: Dispatch<SetStateAction<unknown>>;
+  setReleaseInfo: Dispatch<SetStateAction<ReleaseInfoType>>;
 };
 
 const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
@@ -18,11 +18,14 @@ const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
   };
 
   useEffect(() => {
-    getSpecificReleaseData(selectedRow?.releaseBranch)
-      .then((result) => {
-        setReleaseInfo(result);
-      })
-      .catch((err) => console.error(err));
+    console.log(versionData);
+    if (selectedRow?.releaseBranch) {
+      getSpecificReleaseData(selectedRow.releaseBranch)
+        .then((result) => {
+          setReleaseInfo(result);
+        })
+        .catch((err) => console.error(err));
+    }
   }, [selectedRow, setReleaseInfo]);
 
   return (
