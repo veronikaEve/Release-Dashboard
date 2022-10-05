@@ -12,7 +12,7 @@ import { ReleaseInfoType } from "../../@types";
 import { releaseInfoInitialValue } from "../../entry-points/default-values/release-info";
 
 const NewReleasePage: React.FC = () => {
-  const [releaseBranches, setReleaseBranches] = useState<any[]>([]); // any[] not very good, but stops typescript from complaining about branch.name
+  const [releaseBranches, setReleaseBranches] = useState<string[]>([]);
   const [releaseInfo, setReleaseInfo] = useState<ReleaseInfoType>(
     releaseInfoInitialValue
   );

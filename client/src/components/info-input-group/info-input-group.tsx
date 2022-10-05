@@ -27,8 +27,8 @@ const InfoInputGroup = ({ label, inputOptions, setReleaseInfo }: PropTypes) => {
           {inputOptions &&
             inputOptions
               .map((branch, index) => (
-                <option key={index} value={branch?.name}>
-                  {branch?.name}
+                <option key={index} value={branch}>
+                  {branch}
                 </option>
               ))
               .reverse()}

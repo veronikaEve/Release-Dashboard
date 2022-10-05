@@ -8,6 +8,12 @@ const githubResponseTranformer = {
             lastUpdatedBy: commitDetails?.author.login || "",
             PRUrl: PRDetails?.html_url || ""
         }
+    },
+
+    getReleaseBranchNames: (branches) => {
+        return branches.map(branch =>
+            branch.name
+        )
     }
 }
 

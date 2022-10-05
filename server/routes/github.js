@@ -1,5 +1,5 @@
 const express = require('express');
-const { getReleaseDetails } = require('../github/github-response-transformer');
+const { getReleaseDetails, getReleaseBranchNames } = require('../github/github-response-transformer');
 const { getPR, getCommitDetails, getReleaseBranches, getPackageJsonContent } = require('../github/github-service');
 const router = express.Router();
 
@@ -18,7 +18,8 @@ router.get("/PRs/:branch_name", async (req, res) => {
 router.get("/release-branches", async (req, res) => {
 
     const releaseBranches = await getReleaseBranches();
-    res.send(releaseBranches);
+    const releaseBranchNames = getReleaseBranchNames(releaseBranches);
+    res.send(releaseBranchNames);
 });
 
 module.exports = router;
