@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container } from "react-bootstrap";
+import { Button, Col, Container } from "react-bootstrap";
 
 import { getReleaseBranches } from "../../services/github";
 import ReleaseInfoCard from "../../components/release-info-card/release-info-card";
@@ -8,8 +8,9 @@ import InfoInputGroup from "../../components/info-input-group/info-input-group";
 
 import TestStatuses from "../../components/test-statuses/test-statuses";
 import ActionCard from "../../components/action-card/action-card";
-import { ReleaseInfoType } from "../../@types";
+import { ActionStatus, ReleaseInfoType } from "../../@types";
 import { releaseInfoInitialValue } from "../../entry-points/default-values/release-info";
+import { onReleaseClick } from "./new-release-page-actions";
 
 const NewReleasePage: React.FC = () => {
   const [releaseBranches, setReleaseBranches] = useState<string[]>([]);
@@ -17,6 +18,7 @@ const NewReleasePage: React.FC = () => {
     releaseInfoInitialValue
   );
   const [testBadge, setTestBadge] = useState<string>("");
+  const [releaseStatus, setReleaseStatus] = useState<ActionStatus[]>([]);
 
   useEffect(() => {
     getReleaseBranches()
@@ -33,6 +35,15 @@ const NewReleasePage: React.FC = () => {
       );
     }
   }, [releaseInfo?.branchName]); // why does this re-render on every "change" if this value just stays empty?? then
+
+  const releaseButton = (
+    <Button
+      className="action-button"
+      onClick={() => onReleaseClick(releaseInfo.branchName, setReleaseStatus)}
+    >
+      Release {releaseInfo.branchName}
+    </Button>
+  );
 
   return (
     <Container fluid className="new-release-page-container">
@@ -52,9 +63,15 @@ const NewReleasePage: React.FC = () => {
       <Col md={4}>
         <TestStatuses badge={testBadge} />
       </Col>
-      <Col md={4}>{/* <ActionCard /> */}</Col>
+      <Col md={4}>
+        <ActionCard button={releaseButton} statuses={releaseStatus} />
+      </Col>
     </Container>
   );
 };
 
 export default NewReleasePage;
+
+// TODO:
+// - Disable release action button if no branch is selected
+// - Disable release action button if test are failing

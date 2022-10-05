@@ -22,10 +22,7 @@ const RollbackPage = () => {
   return (
     <Container data-testid="rollback-page">
       <Col md={5} style={{ display: "grid", gap: "40px" }}>
-        <ActionCard
-          button={rollBackButton}
-          statuses={rollBackStatus}
-        ></ActionCard>
+        <ActionCard button={rollBackButton} statuses={rollBackStatus} />
       </Col>
     </Container>
   );
