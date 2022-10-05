@@ -1,17 +1,34 @@
 import { Container } from "react-bootstrap";
-import LoadingEllipses from "../loading-ellipses/loading-ellipses";
+import { ActionStatus } from "../../@types";
 
-const JobStatusFlow = () => {
+type PropTypes = {
+  statuses: ActionStatus[];
+};
+
+const JobStatusFlow = ({ statuses }: PropTypes) => {
+  console.log(statuses);
   return (
     <Container className="job-status-flow-container">
       <div className="left-stick" />
       <Container fluid className="job-statuses">
-        <div className="job_statuses__status">Started.</div>
-        <div className="job_statuses__status">Doing...</div>
-        <LoadingEllipses />
+        <>
+          {statuses.length ? (
+            statuses.map((status) => (
+              <div className={`job_statuses__status ${status.statusCode}`}>
+                {status.message}
+              </div>
+            ))
+          ) : (
+            <div className="job_statuses__status">Waiting for action ...</div>
+          )}
+        </>
       </Container>
     </Container>
   );
 };
 
 export default JobStatusFlow;
+
+// TODO:
+// alter and finalise logic once webhooks are implemented so that the client can listen and receive status updates
+// LoadingEllipses to only appear until client still listens. It should not render once the job has failed or succeeded

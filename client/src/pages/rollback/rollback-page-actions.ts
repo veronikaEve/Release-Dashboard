@@ -1,18 +1,41 @@
+import { Dispatch, SetStateAction } from "react";
+import { ActionStatus } from "../../@types";
 import { concourseJobTypes } from "../../constants/concourse";
 import { runJob } from "../../services/concourse";
 
-export const onRollBackClick = (branch: string | undefined) => {
+export const onRollBackClick = (
+  branch: string | undefined,
+  setRollBackStatus: Dispatch<SetStateAction<ActionStatus[]>>
+) => {
   if (branch) {
     runJob(branch, concourseJobTypes.rollback)
       .then((result: number | void) => {
         if (result === 200) {
-          alert(`🥳 successfully rolled back ${branch}`);
+          setRollBackStatus((prevState) => [
+            ...prevState,
+            {
+              statusCode: "success",
+              message: `Roll back pipeline triggered for ${branch}!`,
+            },
+          ]);
         } else {
-          alert(`🙁 failed to roll back ${branch}`);
+          setRollBackStatus((prevState) => [
+            ...prevState,
+            {
+              statusCode: "error",
+              message: `Failed to trigger roll back pipeline for ${branch}!`,
+            },
+          ]);
         }
       })
       .catch((err: unknown) => {
-        alert(`🙁 something went wrong`);
+        setRollBackStatus((prevState) => [
+          ...prevState,
+          {
+            statusCode: "error",
+            message: `Something went wrong!`,
+          },
+        ]);
         console.error(err);
       });
   }

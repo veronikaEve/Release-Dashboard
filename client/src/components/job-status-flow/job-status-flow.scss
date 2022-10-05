@@ -18,6 +18,12 @@
     border-width: thin;
     border-color: $gray-300;
     border-radius: 5px;
+
+    &.error {
+        background-color: $red-100;
+        border-color: $red-200;
+        color: $red;
+    }
 }
 
 .left-stick {

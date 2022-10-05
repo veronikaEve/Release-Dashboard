@@ -52,9 +52,7 @@ const NewReleasePage: React.FC = () => {
       <Col md={4}>
         <TestStatuses badge={testBadge} />
       </Col>
-      <Col md={4}>
-        <ActionCard />
-      </Col>
+      <Col md={4}>{/* <ActionCard /> */}</Col>
     </Container>
   );
 };

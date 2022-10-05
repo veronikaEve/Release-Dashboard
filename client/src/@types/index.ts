@@ -15,3 +15,8 @@ export type ReleaseInfoType = {
   lastUpdatedBy: string;
   PRUrl: string;
 };
+
+export type ActionStatus = {
+  statusCode: "success" | "error";
+  message: string;
+};
