@@ -5,6 +5,7 @@ import Router from "react-router-dom";
 
 import { onRollBackClick } from "./rollback-page-actions";
 import RollbackPage from "./rollback-page";
+import React, { useState as useStateMock } from "react";
 
 jest.mock("react-router-dom", () => ({
   useParams: jest.fn(),
@@ -16,6 +17,8 @@ jest.mock("./rollback-page-actions", () => ({
 
 describe("RollbackPage", () => {
   const branchName = "spinach";
+  const setState = jest.fn();
+  const useStateMock: any = (initState: any) => [initState, setState];
 
   beforeEach(() => {
     jest.spyOn(Router, "useParams").mockReturnValue({ branch: branchName });
@@ -37,6 +40,8 @@ describe("RollbackPage", () => {
   });
 
   test("roll back button should call onRollBackClick on click", async () => {
+    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+
     render(<RollbackPage />);
 
     const rollBackButton = screen.getByRole("button", {
@@ -47,6 +52,6 @@ describe("RollbackPage", () => {
     await user.click(rollBackButton);
 
     expect(onRollBackClick).toHaveBeenCalledTimes(1);
-    expect(onRollBackClick).toHaveBeenCalledWith(branchName);
+    expect(onRollBackClick).toHaveBeenCalledWith(branchName, setState);
   });
 });

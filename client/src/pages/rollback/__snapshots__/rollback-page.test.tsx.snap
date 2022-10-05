@@ -10,12 +10,41 @@ exports[`RollbackPage should match snapshot 1`] = `
       class="col-md-5"
       style="display: grid; gap: 40px;"
     >
-      <button
-        class="btn btn-primary"
-        type="button"
+      <div
+        class="text-center card"
       >
-        Roll back spinach
-      </button>
+        <div
+          class="card-header"
+        >
+          Full rollout
+        </div>
+        <div
+          class="card-body"
+        >
+          <button
+            class="action-button btn btn-primary"
+            type="button"
+          >
+            Roll back spinach
+          </button>
+          <div
+            class="job-status-flow-container container"
+          >
+            <div
+              class="left-stick"
+            />
+            <div
+              class="job-statuses container-fluid"
+            >
+              <div
+                class="job_statuses__status"
+              >
+                Waiting for action ...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
