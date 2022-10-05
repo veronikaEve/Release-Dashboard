@@ -6,7 +6,6 @@ type PropTypes = {
 };
 
 const JobStatusFlow = ({ statuses }: PropTypes) => {
-  console.log(statuses);
   return (
     <Container className="job-status-flow-container">
       <div className="left-stick" />
@@ -17,6 +16,7 @@ const JobStatusFlow = ({ statuses }: PropTypes) => {
               <div
                 key={index}
                 className={`job_statuses__status ${status.statusCode}`}
+                data-testid={`${status.statusCode}-status`}
               >
                 {status.message}
               </div>

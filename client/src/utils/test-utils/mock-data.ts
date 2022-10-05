@@ -1,4 +1,4 @@
-import { VersionData } from "../../@types";
+import { ActionStatus, VersionData } from "../../@types";
 
 export const mockVersionData: VersionData[] = [
   {
@@ -16,5 +16,16 @@ export const mockVersionData: VersionData[] = [
     versionFrom: "v7.7.10",
     versionTo: "v7.8.2",
     _id: "6313b230e6c802832ffeee01",
+  },
+];
+
+export const mockActionStatusData: ActionStatus[] = [
+  {
+    statusCode: "success",
+    message: "Success test message",
+  },
+  {
+    statusCode: "error",
+    message: "Error test message",
   },
 ];

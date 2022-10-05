@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JobStatusFlow should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="job-status-flow-container container"
+  >
+    <div
+      class="left-stick"
+    />
+    <div
+      class="job-statuses container-fluid"
+    >
+      <div
+        class="job_statuses__status success"
+        data-testid="success-status"
+      >
+        Success test message
+      </div>
+      <div
+        class="job_statuses__status error"
+        data-testid="error-status"
+      >
+        Error test message
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
