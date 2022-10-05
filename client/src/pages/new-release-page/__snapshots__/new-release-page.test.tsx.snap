@@ -50,9 +50,7 @@ exports[`NewReleasePage should match snapshot 1`] = `
             </div>
             <div
               class="info-group__info col"
-            >
-              1.4
-            </div>
+            />
           </div>
           <div
             class="info-group row"
@@ -118,6 +116,45 @@ exports[`NewReleasePage should match snapshot 1`] = `
             <div
               class="info-group__info col"
             />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4"
+    >
+      <div
+        class="text-center card"
+      >
+        <div
+          class="card-header"
+        >
+          Full rollout
+        </div>
+        <div
+          class="card-body"
+        >
+          <button
+            class="action-button btn btn-primary"
+            type="button"
+          >
+            Release 
+          </button>
+          <div
+            class="job-status-flow-container container"
+          >
+            <div
+              class="left-stick"
+            />
+            <div
+              class="job-statuses container-fluid"
+            >
+              <div
+                class="job_statuses__status"
+              >
+                Waiting for action ...
+              </div>
+            </div>
           </div>
         </div>
       </div>
