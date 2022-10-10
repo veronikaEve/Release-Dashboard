@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import InfoInputGroup from "../info-input-group/info-input-group";
@@ -6,11 +6,7 @@ import InfoInputGroup from "../info-input-group/info-input-group";
 describe("InfoInputGroup", () => {
   const props = {
     label: "test label",
-    inputOptions: [
-      { name: "test_branch_1" },
-      { name: "test_branch_2" },
-      { name: "test_branch_3" },
-    ],
+    inputOptions: ["test_branch_1", "test_branch_2", "test_branch_3"],
     setReleaseInfo: jest.fn,
   };
 

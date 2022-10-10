@@ -27,12 +27,12 @@ const VersionTable = ({ versionData, setReleaseInfo }: PropTypes) => {
               <th>Excuted by</th>
             </tr>
           </thead>
-          {versionData.length && (
+          {versionData.length ? (
             <VersionTableBody
               versionData={versionData}
               setReleaseInfo={setReleaseInfo}
             />
-          )}
+          ) : null}
         </Table>
       </div>
     </div>

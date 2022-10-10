@@ -18,7 +18,6 @@ const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
   };
 
   useEffect(() => {
-    console.log(versionData);
     if (selectedRow?.releaseBranch) {
       getSpecificReleaseData(selectedRow.releaseBranch)
         .then((result) => {
@@ -26,7 +25,7 @@ const VersionTableBody = ({ versionData, setReleaseInfo }: PropTypes) => {
         })
         .catch((err) => console.error(err));
     }
-  }, [selectedRow, setReleaseInfo]);
+  }, [selectedRow, setReleaseInfo, versionData]);
 
   return (
     <tbody className="version-table__body" data-testid="version-table__body">

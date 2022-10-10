@@ -5,7 +5,7 @@ import Router from "react-router-dom";
 
 import { onRollBackClick } from "./rollback-page-actions";
 import RollbackPage from "./rollback-page";
-import React, { useState as useStateMock } from "react";
+import React from "react";
 
 jest.mock("react-router-dom", () => ({
   useParams: jest.fn(),

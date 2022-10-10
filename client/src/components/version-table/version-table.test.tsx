@@ -54,7 +54,7 @@ describe("VersionTable", () => {
       props.versionData = [];
       render(<VersionTable {...props} />);
 
-      expect(screen.getByTestId("version-table__body")).toBeEmptyDOMElement();
+      expect(screen.queryByTestId("version-table__body")).toBeNull();
     });
   });
 });
